@@ -1,0 +1,21 @@
+Algoritmo: PRINT-SET(elem)
+
+    set = FIND-SET(elem)
+    aux = set;
+
+    imprima(set)
+    set = proximo elemento dentro do set
+
+    enquanto(aux != set) faça:
+        imprima(set)
+        set = proximo elemento dentro do set
+
+    retorne
+
+
+# A operação FIND-SET tem uma complexidade O(h), sendo h a altura da árvore, e no pior caso, ela gasta 
+O(n). A função PRINT-SET realiza uma chamada para a função FIND-SET para encontrar o set que contém
+o elemento desejado. Após essa chamada é realizado uma visita por todos os nós desse set, com complexi_
+dade O(1). Desta forma, o PRINT-SET tem um custo total de O(n+1), ou seja, o tempo permance linear.
+
+# As funções utilizadas por PRINT-SET não teve alteração e permanceu com sua complexidade inalterada.
