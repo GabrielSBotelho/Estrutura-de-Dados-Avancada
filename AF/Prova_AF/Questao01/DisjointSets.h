@@ -88,6 +88,8 @@ void DisjointSets::printset(const int elem){
             std::cout << set1 << " ";
             set1 = sets[set1].next;
         }while(aux != set1);
+
+        std::cout<<"\n";
 }
 
 #endif
