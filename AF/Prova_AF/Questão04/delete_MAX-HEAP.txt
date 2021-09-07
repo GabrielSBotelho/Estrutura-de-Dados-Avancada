@@ -1,0 +1,43 @@
+PAI(i)
+    retorne piso((i - 2) / d + 1)
+
+ESQUERDA(i)
+    retorne 2 * i + 1
+
+DIREITA(i)
+    retorne 2 * i + 2
+
+MAX-HEAPIFY(A[], i)
+    enquanto verdade faça:
+        esq = ESQUERDA(i)
+        dir = DIREITA(i)
+        se esq ≤ A.tamHeap e A[esq] > A[i]   
+            maior = esq
+        senão 
+            maior = i
+
+        se dir ≤ A.tamHeap and A[dir] > A[maior]
+            maior = dir
+        
+        se maior == i
+            retorne
+        troque A[i] com A[maior]
+        i = maior
+
+
+HEAP-INCREASE-KEY(A[], i, chave)
+    se chave < A[i]
+        erro
+    enquanto i > 1 e A[PAI(i)] < chave faça:
+        A[i] = A[PAI(i)]
+        i = PAI(i)
+    A[i] = chave
+
+HEAP-DELETE(A[], i)
+    se A[i] < A[A.tamHeap]
+        HEAP-INCREASE-KEY(A, i, A[A.tamHeap])
+    senão
+        A[i] = A[A.tamHeap]
+        MAX-HEAPIFY(A, i)
+
+    A.tamHeap = A.tamHeap - 1

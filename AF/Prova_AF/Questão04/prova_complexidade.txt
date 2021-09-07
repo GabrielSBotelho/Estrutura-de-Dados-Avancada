@@ -1,0 +1,12 @@
+b) Conside que a altura logarítmica para é de O(log n) para uma árvore de altura n;
+O heap faz no máximo, tantas trocas tão altas quanto a árvore, e como a única operação 
+que você realiza é comparar com o filho (no máximo 2) para cada nível a complexidade do 
+tempo é O (logn) para propriedade da altura logarítmica. No pior caso, quando A for
+uma árvore binária perfeita, considerando que  recursões realizadas, temos sua função será:
+                        
+                        T(n)= T((n−1)/2) + O(log n)
+
+Pois em cada passo de recursão você considera metade da árvore e exclui a raiz, e em cada passo 
+com n como parâmetro você demora O(log n) para heapify. 
+
+Desta forma, no pior caso o HEAP-DELETE tem complexidade O(log n).
